@@ -5,8 +5,7 @@
  */
 package cd_calendarapplication;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.sql.Connection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +17,13 @@ import javafx.stage.Stage;
  * @author caseydierking
  */
 public class CD_CalendarApplication extends Application {
+    
+        private static Connection connection;
+
+        private static Connection conn = null;
+	
+
+    
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -33,12 +39,11 @@ public class CD_CalendarApplication extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+       DBConnection.init();
+        connection = DBConnection.getConn();
         
-        //Locale.setDefault(new Locale("no", "NO"));
-        //Locale.setDefault(new Locale("no", "NO"));
-       // Locale.setDefault(new Locale("en", "US"));English - en_US
-
+        launch(args);
+        DBConnection.closeConn();
 
 		
 		
