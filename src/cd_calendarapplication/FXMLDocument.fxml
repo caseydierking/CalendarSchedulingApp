@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cd_calendarapplication.FXMLDocumentController">
     <children>
-        <Button fx:id="button" layoutX="324.0" layoutY="209.0" onAction="#handleButtonAction" text="Click Me!" />
+        <Button fx:id="button" layoutX="324.0" layoutY="209.0" onAction="#loginAndConnect" text="Click Me!" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <Label fx:id="loginLabel" layoutX="27.0" layoutY="14.0" prefHeight="73.0" prefWidth="279.0" text="Login">
          <font>
@@ -17,7 +17,7 @@
       </Label>
       <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" layoutX="96.0" layoutY="112.0" prefHeight="17.0" prefWidth="113.0" text="Username" textAlignment="RIGHT" />
       <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" layoutX="94.0" layoutY="146.0" prefHeight="17.0" prefWidth="113.0" text="Password" />
-      <TextField layoutX="232.0" layoutY="107.0" />
-      <TextField layoutX="232.0" layoutY="155.0" />
+      <TextField fx:id="usernameField" layoutX="232.0" layoutY="107.0" />
+      <TextField fx:id="passwordField" layoutX="232.0" layoutY="155.0" />
     </children>
 </AnchorPane>
