@@ -5,6 +5,7 @@
  */
 package cd_calendarapplication;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,11 +13,16 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  *
@@ -50,7 +56,7 @@ public class FXMLDocumentController implements Initializable {
     
     
     
-    public void loginAndConnect(ActionEvent event){
+    public void loginAndConnect(ActionEvent event) throws IOException{
         
         
         
@@ -61,6 +67,13 @@ public class FXMLDocumentController implements Initializable {
             /* Replace the X's with the information for your database instance */
             connDB = DriverManager.getConnection("jdbc:mysql://52.206.157.109:3306/U04lGH?" + 
                     "user=" + usernameField.getText() + "&password=" + passwordField.getText());
+            
+            //Login and redirect to Customer Managment Screen if successful login
+            Parent customerManagementParent = FXMLLoader.load(getClass().getResource("CustomerManagement.fxml"));
+            Scene customerManagementScene = new Scene(customerManagementParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(customerManagementScene);
+            window.show();
         }catch (ClassNotFoundException ce){
             System.out.println("Cannot find the right class.  Did you remember to add the mysql library to your Run Configuration?");
             ce.printStackTrace();
@@ -73,6 +86,8 @@ public class FXMLDocumentController implements Initializable {
     
 
             alert.showAndWait();
+            
+          
            
 }
         
