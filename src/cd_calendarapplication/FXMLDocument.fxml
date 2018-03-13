@@ -8,8 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cd_calendarapplication.FXMLDocumentController">
     <children>
-        <Button fx:id="button" layoutX="324.0" layoutY="209.0" onAction="#loginAndConnect" text="Click Me!" />
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <Button layoutX="324.0" layoutY="209.0" onAction="#loginAndConnect" text="Click Me!" />
       <Label fx:id="loginLabel" layoutX="27.0" layoutY="14.0" prefHeight="73.0" prefWidth="279.0" text="Login">
          <font>
             <Font name="Cubano Regular" size="30.0" />

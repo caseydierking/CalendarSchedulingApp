@@ -7,6 +7,7 @@ package cd_calendarapplication;
 
 import java.sql.Connection;
 import java.util.Locale;
+import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,6 +45,8 @@ public class CD_CalendarApplication extends Application {
         
          // This allows multiple languages to be supported for the login screen. Uncomment French and comment US to test.
          // Locale.setDefault(new Locale("fr", "FR"));
+             ResourceBundle rb = ResourceBundle.getBundle("language_files/rb");
+
       
       Locale.setDefault(new Locale("en", "US"));//English - en_US
 

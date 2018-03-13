@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cd_calendarapplication.CustomerManagementController">
-    
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cd_calendarapplication.CustomerManagementController">
+   <children>
+      <TableView fx:id="customerTable" layoutX="51.0" layoutY="39.0" prefHeight="322.0" prefWidth="693.0">
+        <columns>
+          <TableColumn fx:id="customerIdColumn" prefWidth="118.0" text="ID" />
+          <TableColumn fx:id="customerNameColumn" minWidth="0.0" prefWidth="199.0" text="Customer Name" />
+            <TableColumn fx:id="addressIdColumn" prefWidth="256.0" text="Address" />
+            <TableColumn fx:id="isActiveColumn" minWidth="3.0" prefWidth="119.0" text="Is Active?" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
